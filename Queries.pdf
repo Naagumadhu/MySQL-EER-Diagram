@@ -1,6 +1,6 @@
 Design DB model for Guvi Zen class using MYSQL
 
-— — — user — — — — — — — — — — — — — — — -
+â€” â€” â€” user â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” -
 
 create table user(
 userid int primary key auto_increment,
@@ -9,7 +9,7 @@ useremail varchar(255) unique,
 usermobile varchar(10) not null
 );
 
-— — — — — — — — — course — — — — — — — — — — — -
+â€” â€” â€” â€” â€” â€” â€” â€” â€” course â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” -
 
 create table course(
 course_id int auto_increment primary key,
@@ -20,7 +20,7 @@ course_fees varchar(25),
 foreign key(userid) references user(userid)
 );
 
-— — — — — — — — -admissions — — — — — — — — — — — — — — -
+â€” â€” â€” â€” â€” â€” â€” â€” -admissions â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” -
 create table admissions(
 userid int,
 course_id int,
@@ -29,14 +29,14 @@ foreign key(userid) references user(userid),
 foreign key(course_id) references course(course_id)
 );
 
-— — — — — — — codekata — — — — — — — — — — — — — — —
+â€” â€” â€” â€” â€” â€” â€” codekata â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” â€”
 create table codekata(
 userid int,
 solved_problem varchar(25) not null,
 foreign key(userid) references user(userid)
 );
 
-— — — — — — — — — mentor — — — — — — — — — — — — — — — — -
+â€” â€” â€” â€” â€” â€” â€” â€” â€” mentor â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” -
 
 create table mentor(
 userid int,
@@ -46,7 +46,7 @@ foreign key(userid) references user(userid),
 foreign key(course_id) references course(course_id)
 );
 
-— — — — — — — — — — — — —studentsAttendance — — — — — — — — — — — —
+â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” â€”studentsAttendance â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” â€”
 create table studentsAttendance(
 A_id int,
 userid int,
@@ -55,7 +55,7 @@ status boolean default true,
 foreign key(userid) references user(userid)
 );
 
-— — — — — — — — — — task — — — — — — — — —
+â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” task â€” â€” â€” â€” â€” â€” â€” â€” â€”
 create table task(
 userid int,
 submited_task varchar(25) not null,
@@ -63,7 +63,7 @@ task_mark varchar(25) ,
 foreign key(userid) references user(userid)
 );
 
-— — — — — — — leaderboard — — — — — — — — — — — — — — —
+â€” â€” â€” â€” â€” â€” â€” leaderboard â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” â€”
 
 create table leaderboard(
 userid int,
@@ -74,7 +74,7 @@ foreign key(userid) references user(userid),
 foreign key(course_id) references course(course_id)
 );
 
-— — — — — — — — — queries — — — — — — — — — — -
+â€” â€” â€” â€” â€” â€” â€” â€” â€” queries â€” â€” â€” â€” â€” â€” â€” â€” â€” â€” -
 create table queries (
 userid int,
 topics varchar(2000),
